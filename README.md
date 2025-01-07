@@ -98,16 +98,16 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_all_alarms_sns_arns"></a> [all\_alarms\_sns\_arns](#input\_all\_alarms\_sns\_arns) | List of ARNs for the SNS topics | `list(string)` | `[]` | no |
 | <a name="input_client_id"></a> [client\_id](#input\_client\_id) | The client id to use for the alarms | `string` | n/a | yes |
-| <a name="input_cluster_blocked_count"></a> [cluster\_blocked\_count](#input\_cluster\_blocked\_count) | The number of cluster blocked before the alarm is triggered | `number` | `0` | no |
+| <a name="input_cluster_blocked_count"></a> [cluster\_blocked\_count](#input\_cluster\_blocked\_count) | The number of cluster blocked before the alarm is triggered | `number` | `1` | no |
 | <a name="input_cluster_blocked_enabled"></a> [cluster\_blocked\_enabled](#input\_cluster\_blocked\_enabled) | Enable cluster blocked alarm | `bool` | `true` | no |
 | <a name="input_cluster_blocked_sns_arns"></a> [cluster\_blocked\_sns\_arns](#input\_cluster\_blocked\_sns\_arns) | List of ARNs for the SNS topics for cluster blocked | `list(string)` | `[]` | no |
-| <a name="input_cluster_status_red_count"></a> [cluster\_status\_red\_count](#input\_cluster\_status\_red\_count) | The number of cluster status red before the alarm is triggered | `number` | `0` | no |
+| <a name="input_cluster_status_red_count"></a> [cluster\_status\_red\_count](#input\_cluster\_status\_red\_count) | The number of cluster status red before the alarm is triggered | `number` | `1` | no |
 | <a name="input_cluster_status_red_enabled"></a> [cluster\_status\_red\_enabled](#input\_cluster\_status\_red\_enabled) | Enable cluster status red alarm | `bool` | `true` | no |
 | <a name="input_cluster_status_red_sns_arns"></a> [cluster\_status\_red\_sns\_arns](#input\_cluster\_status\_red\_sns\_arns) | List of ARNs for the SNS topics for cluster status red | `list(string)` | `[]` | no |
-| <a name="input_cluster_status_yellow_count"></a> [cluster\_status\_yellow\_count](#input\_cluster\_status\_yellow\_count) | The number of cluster status yellow before the alarm is triggered | `number` | `0` | no |
+| <a name="input_cluster_status_yellow_count"></a> [cluster\_status\_yellow\_count](#input\_cluster\_status\_yellow\_count) | The number of cluster status yellow before the alarm is triggered | `number` | `1` | no |
 | <a name="input_cluster_status_yellow_enabled"></a> [cluster\_status\_yellow\_enabled](#input\_cluster\_status\_yellow\_enabled) | Enable cluster status yellow alarm | `bool` | `true` | no |
 | <a name="input_cluster_status_yellow_sns_arns"></a> [cluster\_status\_yellow\_sns\_arns](#input\_cluster\_status\_yellow\_sns\_arns) | List of ARNs for the SNS topics for cluster status yellow | `list(string)` | `[]` | no |
-| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The Domain name of the cluster to monitor. | `string` | n/a | yes |
+| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The domain name of the OpenSearch cluster | `string` | n/a | yes |
 | <a name="input_ebs_volume_size"></a> [ebs\_volume\_size](#input\_ebs\_volume\_size) | The size of the EBS volume in GB | `number` | n/a | yes |
 | <a name="input_high_cpu_enabled"></a> [high\_cpu\_enabled](#input\_high\_cpu\_enabled) | Enable high CPU alarm | `bool` | `true` | no |
 | <a name="input_high_cpu_sns_arns"></a> [high\_cpu\_sns\_arns](#input\_high\_cpu\_sns\_arns) | List of ARNs for the SNS topics | `list(string)` | `[]` | no |
@@ -118,17 +118,17 @@ No modules.
 | <a name="input_high_storage_enabled"></a> [high\_storage\_enabled](#input\_high\_storage\_enabled) | Enable high storage alarm | `bool` | `true` | no |
 | <a name="input_high_storage_sns_arns"></a> [high\_storage\_sns\_arns](#input\_high\_storage\_sns\_arns) | List of ARNs for the SNS topics | `list(string)` | `[]` | no |
 | <a name="input_high_storage_threshold"></a> [high\_storage\_threshold](#input\_high\_storage\_threshold) | The threshold for high storage usage | `number` | `70` | no |
-| <a name="input_master_not_reachable_count"></a> [master\_not\_reachable\_count](#input\_master\_not\_reachable\_count) | The number of master not reachable before the alarm is triggered | `number` | `0` | no |
+| <a name="input_master_not_reachable_count"></a> [master\_not\_reachable\_count](#input\_master\_not\_reachable\_count) | The number of master not reachable before the alarm is triggered | `number` | `1` | no |
 | <a name="input_master_not_reachable_enabled"></a> [master\_not\_reachable\_enabled](#input\_master\_not\_reachable\_enabled) | Enable master not reachable alarm | `bool` | `true` | no |
 | <a name="input_master_not_reachable_sns_arns"></a> [master\_not\_reachable\_sns\_arns](#input\_master\_not\_reachable\_sns\_arns) | List of ARNs for the SNS topics for master not reachable | `list(string)` | `[]` | no |
-| <a name="input_search_rejected_count"></a> [search\_rejected\_count](#input\_search\_rejected\_count) | The number of search rejected before the alarm is triggered | `number` | `0` | no |
+| <a name="input_search_rejected_count"></a> [search\_rejected\_count](#input\_search\_rejected\_count) | The number of search rejected before the alarm is triggered | `number` | `1` | no |
 | <a name="input_search_rejected_enabled"></a> [search\_rejected\_enabled](#input\_search\_rejected\_enabled) | Enable search rejected alarm | `bool` | `true` | no |
 | <a name="input_search_rejected_sns_arns"></a> [search\_rejected\_sns\_arns](#input\_search\_rejected\_sns\_arns) | List of ARNs for the SNS topics for search rejected | `list(string)` | `[]` | no |
-| <a name="input_snapshot_failed_count"></a> [snapshot\_failed\_count](#input\_snapshot\_failed\_count) | The number of snapshot failed before the alarm is triggered | `number` | `0` | no |
+| <a name="input_snapshot_failed_count"></a> [snapshot\_failed\_count](#input\_snapshot\_failed\_count) | The number of snapshot failed before the alarm is triggered | `number` | `1` | no |
 | <a name="input_snapshot_failed_enabled"></a> [snapshot\_failed\_enabled](#input\_snapshot\_failed\_enabled) | Enable snapshot failed alarm | `bool` | `true` | no |
 | <a name="input_snapshot_failed_sns_arns"></a> [snapshot\_failed\_sns\_arns](#input\_snapshot\_failed\_sns\_arns) | List of ARNs for the SNS topics for snapshot failed | `list(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources. | `map(string)` | `{}` | no |
-| <a name="input_write_rejected_count"></a> [write\_rejected\_count](#input\_write\_rejected\_count) | The number of write rejected before the alarm is triggered | `number` | `0` | no |
+| <a name="input_write_rejected_count"></a> [write\_rejected\_count](#input\_write\_rejected\_count) | The number of write rejected before the alarm is triggered | `number` | `1` | no |
 | <a name="input_write_rejected_enabled"></a> [write\_rejected\_enabled](#input\_write\_rejected\_enabled) | Enable write rejected alarm | `bool` | `true` | no |
 | <a name="input_write_rejected_sns_arns"></a> [write\_rejected\_sns\_arns](#input\_write\_rejected\_sns\_arns) | List of ARNs for the SNS topics for write rejected | `list(string)` | `[]` | no |
 
