@@ -25,7 +25,7 @@ variable "cluster_status_red_enabled" {
 variable "cluster_status_red_count" {
   description = "The number of cluster status red before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "cluster_status_red_sns_arns" {
@@ -43,7 +43,7 @@ variable "cluster_status_yellow_enabled" {
 variable "cluster_status_yellow_count" {
   description = "The number of cluster status yellow before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "cluster_status_yellow_sns_arns" {
@@ -53,7 +53,7 @@ variable "cluster_status_yellow_sns_arns" {
 
 }
 variable "domain_name" {
-  description = "The Domain name of the cluster to monitor."
+  description = "The domain name of the OpenSearch cluster"
   type        = string
 }
 
@@ -96,7 +96,7 @@ variable "snapshot_failed_enabled" {
 variable "snapshot_failed_count" {
   description = "The number of snapshot failed before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "snapshot_failed_sns_arns" {
@@ -114,7 +114,7 @@ variable "cluster_blocked_enabled" {
 variable "cluster_blocked_count" {
   description = "The number of cluster blocked before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "cluster_blocked_sns_arns" {
@@ -133,7 +133,7 @@ variable "master_not_reachable_enabled" {
 variable "master_not_reachable_count" {
   description = "The number of master not reachable before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "master_not_reachable_sns_arns" {
@@ -151,7 +151,7 @@ variable "write_rejected_enabled" {
 variable "write_rejected_count" {
   description = "The number of write rejected before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "write_rejected_sns_arns" {
@@ -169,7 +169,7 @@ variable "search_rejected_enabled" {
 variable "search_rejected_count" {
   description = "The number of search rejected before the alarm is triggered"
   type        = number
-  default     = 0
+  default     = 1
 
 }
 variable "search_rejected_sns_arns" {

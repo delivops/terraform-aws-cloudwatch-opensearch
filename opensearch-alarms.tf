@@ -1,9 +1,7 @@
-
-
 resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   count                     = var.high_cpu_enabled ? 1 : 0
-  alarm_name                = "ES | High CPU Utilization (>${var.high_cpu_threshold}%) | ${domain_name}"
-  alarm_description         = "High CPU in ${domain_name}"
+  alarm_name                = "ES | High CPU Utilization (>${var.high_cpu_threshold}%) | ${var.domain_name}"
+  alarm_description         = "High CPU in ${var.domain_name}"
   comparison_operator       = "GreaterThanThreshold"
   evaluation_periods        = 5
   datapoints_to_alarm       = 5
@@ -30,7 +28,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
 
 resource "aws_cloudwatch_metric_alarm" "high_memory" {
   count                     = var.high_memory_enabled ? 1 : 0
-  alarm_name                = "ES | High Memory Utilization (>${var.high_memory_threshold}%) | ${domain_name}"
+  alarm_name                = "ES | High Memory Utilization (>${var.high_memory_threshold}%) | ${var.domain_name}"
   alarm_description         = "High memory in ${var.domain_name}"
   comparison_operator       = "GreaterThanThreshold"
   evaluation_periods        = 5
@@ -57,7 +55,7 @@ resource "aws_cloudwatch_metric_alarm" "high_memory" {
 
 resource "aws_cloudwatch_metric_alarm" "high_storage" {
   count                     = var.high_storage_enabled ? 1 : 0
-  alarm_name                = "ES | High Storage Utilization (>${var.high_storage_threshold}%) | ${domain_name}"
+  alarm_name                = "ES | High Storage Utilization (>${var.high_storage_threshold}%) | ${var.domain_name}"
   alarm_description         = "High storage in ${var.domain_name}"
   comparison_operator       = "GreaterThanThreshold"
   evaluation_periods        = 5
@@ -85,7 +83,7 @@ resource "aws_cloudwatch_metric_alarm" "high_storage" {
 resource "aws_cloudwatch_metric_alarm" "cluster_status_red" {
 
   count                     = var.cluster_status_red_enabled ? 1 : 0
-  alarm_name                = "ES | Cluster Status Red | ${domain_name}"
+  alarm_name                = "ES | Cluster Status Red | ${var.domain_name}"
   alarm_description         = "Cluster status red in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
@@ -111,7 +109,7 @@ resource "aws_cloudwatch_metric_alarm" "cluster_status_red" {
 resource "aws_cloudwatch_metric_alarm" "cluster_status_yellow" {
 
   count                     = var.cluster_status_yellow_enabled ? 1 : 0
-  alarm_name                = "ES | Cluster Status Yellow | ${domain_name}"
+  alarm_name                = "ES | Cluster Status Yellow | ${var.domain_name}"
   alarm_description         = "Cluster status yellow in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
@@ -137,7 +135,7 @@ resource "aws_cloudwatch_metric_alarm" "cluster_status_yellow" {
 resource "aws_cloudwatch_metric_alarm" "cluster_blocked" {
 
   count                     = var.cluster_blocked_enabled ? 1 : 0
-  alarm_name                = "ES | Cluster Blocked | ${domain_name}"
+  alarm_name                = "ES | Cluster Blocked | ${var.domain_name}"
   alarm_description         = "Cluster blocked in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
@@ -163,7 +161,7 @@ resource "aws_cloudwatch_metric_alarm" "cluster_blocked" {
 resource "aws_cloudwatch_metric_alarm" "snapshot_failed" {
 
   count                     = var.snapshot_failed_enabled ? 1 : 0
-  alarm_name                = "ES | Snapshot Failed | ${domain_name}"
+  alarm_name                = "ES | Snapshot Failed | ${var.domain_name}"
   alarm_description         = "Snapshot failed in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
@@ -189,7 +187,7 @@ resource "aws_cloudwatch_metric_alarm" "snapshot_failed" {
 resource "aws_cloudwatch_metric_alarm" "master_not_reachable" {
 
   count                     = var.master_not_reachable_enabled ? 1 : 0
-  alarm_name                = "ES | Master Not Reachable | ${domain_name}"
+  alarm_name                = "ES | Master Not Reachable | ${var.domain_name}"
   alarm_description         = "Master not reachable in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
@@ -215,7 +213,7 @@ resource "aws_cloudwatch_metric_alarm" "master_not_reachable" {
 resource "aws_cloudwatch_metric_alarm" "write_rejected" {
 
   count                     = var.write_rejected_enabled ? 1 : 0
-  alarm_name                = "ES | Write Rejected | ${domain_name}"
+  alarm_name                = "ES | Write Rejected | ${var.domain_name}"
   alarm_description         = "Write rejected in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
@@ -241,7 +239,7 @@ resource "aws_cloudwatch_metric_alarm" "write_rejected" {
 resource "aws_cloudwatch_metric_alarm" "search_rejected" {
 
   count                     = var.search_rejected_enabled ? 1 : 0
-  alarm_name                = "ES | Search Rejected | ${domain_name}"
+  alarm_name                = "ES | Search Rejected | ${var.domain_name}"
   alarm_description         = "Search rejected in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
