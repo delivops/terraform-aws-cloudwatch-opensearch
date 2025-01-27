@@ -57,7 +57,7 @@ resource "aws_cloudwatch_metric_alarm" "high_storage" {
   count                     = var.high_storage_enabled ? 1 : 0
   alarm_name                = "ES | High Storage Utilization (>${var.high_storage_threshold}%) | ${var.domain_name}"
   alarm_description         = "High storage in ${var.domain_name}"
-  comparison_operator       = "GreaterThanThreshold"
+  comparison_operator       = "LessThanThreshold"
   evaluation_periods        = 5
   datapoints_to_alarm       = 5
   metric_name               = "FreeStorageSpace"
@@ -140,7 +140,7 @@ resource "aws_cloudwatch_metric_alarm" "cluster_blocked" {
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
   datapoints_to_alarm       = var.cluster_blocked_count
-  metric_name               = "ClusterBlocked"
+  metric_name               = "ClusterIndexWritesBlocked"
   namespace                 = "AWS/ES"
   period                    = 300
   statistic                 = "Sum"
@@ -166,7 +166,7 @@ resource "aws_cloudwatch_metric_alarm" "snapshot_failed" {
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
   datapoints_to_alarm       = var.snapshot_failed_count
-  metric_name               = "SnapshotFailed"
+  metric_name               = "AutomatedSnapshotFailure"
   namespace                 = "AWS/ES"
   period                    = 300
   statistic                 = "Sum"
@@ -262,4 +262,3 @@ resource "aws_cloudwatch_metric_alarm" "search_rejected" {
     "Terraform"  = "true"
   })
 }
-
