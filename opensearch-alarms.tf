@@ -86,8 +86,8 @@ resource "aws_cloudwatch_metric_alarm" "cluster_status_red" {
   alarm_name                = "ES | Cluster Status Red | ${var.domain_name}"
   alarm_description         = "Cluster status red in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
-  evaluation_periods        = 1
-  datapoints_to_alarm       = var.cluster_status_red_count
+  evaluation_periods        = 2
+  datapoints_to_alarm       = 2
   metric_name               = "ClusterStatus.red"
   namespace                 = "AWS/ES"
   period                    = 300
@@ -112,8 +112,8 @@ resource "aws_cloudwatch_metric_alarm" "cluster_status_yellow" {
   alarm_name                = "ES | Cluster Status Yellow | ${var.domain_name}"
   alarm_description         = "Cluster status yellow in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
-  evaluation_periods        = 1
-  datapoints_to_alarm       = var.cluster_status_yellow_count
+  evaluation_periods        = 24
+  datapoints_to_alarm       = 24
   metric_name               = "ClusterStatus.yellow"
   namespace                 = "AWS/ES"
   period                    = 300
@@ -138,8 +138,8 @@ resource "aws_cloudwatch_metric_alarm" "cluster_blocked" {
   alarm_name                = "ES | Cluster Blocked | ${var.domain_name}"
   alarm_description         = "Cluster blocked in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
-  evaluation_periods        = 1
-  datapoints_to_alarm       = var.cluster_blocked_count
+  evaluation_periods        = 2
+  datapoints_to_alarm       = 2
   metric_name               = "ClusterIndexWritesBlocked"
   namespace                 = "AWS/ES"
   period                    = 300
@@ -165,7 +165,7 @@ resource "aws_cloudwatch_metric_alarm" "snapshot_failed" {
   alarm_description         = "Snapshot failed in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = 1
-  datapoints_to_alarm       = var.snapshot_failed_count
+  datapoints_to_alarm       = 1
   metric_name               = "AutomatedSnapshotFailure"
   namespace                 = "AWS/ES"
   period                    = 300
@@ -190,8 +190,8 @@ resource "aws_cloudwatch_metric_alarm" "master_not_reachable" {
   alarm_name                = "ES | Master Not Reachable | ${var.domain_name}"
   alarm_description         = "Master not reachable in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
-  evaluation_periods        = 1
-  datapoints_to_alarm       = var.master_not_reachable_count
+  evaluation_periods        = 2
+  datapoints_to_alarm       = 2
   metric_name               = "MasterNotDiscovered"
   namespace                 = "AWS/ES"
   period                    = 300
@@ -216,8 +216,8 @@ resource "aws_cloudwatch_metric_alarm" "write_rejected" {
   alarm_name                = "ES | Write Rejected | ${var.domain_name}"
   alarm_description         = "Write rejected in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
-  evaluation_periods        = 1
-  datapoints_to_alarm       = var.write_rejected_count
+  evaluation_periods        = 2
+  datapoints_to_alarm       = 2
   metric_name               = "WriteThrottleEvents"
   namespace                 = "AWS/ES"
   period                    = 300
@@ -242,8 +242,8 @@ resource "aws_cloudwatch_metric_alarm" "search_rejected" {
   alarm_name                = "ES | Search Rejected | ${var.domain_name}"
   alarm_description         = "Search rejected in ${var.domain_name}"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
-  evaluation_periods        = 1
-  datapoints_to_alarm       = var.search_rejected_count
+  evaluation_periods        = 2
+  datapoints_to_alarm       = 2
   metric_name               = "SearchThrottleEvents"
   namespace                 = "AWS/ES"
   period                    = 300
